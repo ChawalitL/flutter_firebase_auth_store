@@ -1,10 +1,9 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_db/screen/welcome_screen.dart';
-import 'package:image_picker/image_picker.dart';
+
 
 class DetialScreen extends StatefulWidget {
   DetialScreen({Key? key, this.ds, this.userID, this.imageID, this.nameDes})
@@ -29,7 +28,7 @@ class _DetialScreenState extends State<DetialScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("${widget.nameDes}",
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black
         ),),
         backgroundColor: Colors.transparent,
