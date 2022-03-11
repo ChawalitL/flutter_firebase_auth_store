@@ -169,6 +169,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           },
         ));
 
+    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

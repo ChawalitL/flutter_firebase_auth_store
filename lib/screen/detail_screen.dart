@@ -28,10 +28,24 @@ class _DetialScreenState extends State<DetialScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("${widget.nameDes}"),
+        title: Text("${widget.nameDes}",
+        style: TextStyle(
+          color: Colors.black
+        ),),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_rounded,
+            color: Color.fromARGB(255, 0, 136, 248),
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         actions: [
           IconButton(
-            padding: const EdgeInsets.only(right: 15),
+            padding: const EdgeInsets.only(right: 30),
             icon: const Icon(
               Icons.delete_forever,
               size: 40,
