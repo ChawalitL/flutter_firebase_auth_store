@@ -22,6 +22,7 @@ class _DetialScreenState extends State<DetialScreen> {
   //
   final changeName = TextEditingController();
   final keyT = GlobalKey<FormState>();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -173,8 +174,8 @@ class _DetialScreenState extends State<DetialScreen> {
               await update(widget.ds.toString(), changeName.text)
                   .whenComplete(() => showSnackBar(
                       'Update Successfully', const Duration(milliseconds: 400)))
-                  .then((value) => Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen())));
+                  .then((value) => Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+                    builder: (context) => HomeScreen()), (route) => false));
             },
             child: const Text('Yes')),
       ],
@@ -191,4 +192,5 @@ class _DetialScreenState extends State<DetialScreen> {
         .doc(a)
         .update({'Des': b}).then((value) => print("Update"));
   }
+
 }
